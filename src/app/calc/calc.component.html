@@ -1,0 +1,48 @@
+<div class="calc-container">
+    <div class="input-data">
+        <div class="kilo">
+            <label for="">Количество километров</label>
+            <input type="text" (keyup)="inputKm($event)">
+        </div>
+        <div class="age">
+            <label for="">Возраст</label>
+            <input type="text" (keyup)="inputAge($event)">
+        </div>
+        <div class="weight">
+            <label for="">Вес багажа</label>
+            <input type="text" (keyup)="inputWeight($event)">
+        </div>
+        <button class="calc" (click)="calculated()">Рассчитать</button>
+    </div>
+    <div class="offer">
+        <p>Предложения:</p>
+        <div class="aeroflot">
+            <p>Аэрофлот</p>
+            <ul>
+                <li data-weight="20" [ngStyle]="{
+                    display: weight > 20 ? 'none' : 'block'
+                }">Эконом: {{aeroflotEconomy}} ₽</li>
+                <li data-weight="50" [ngStyle]="{
+                    display: weight > 50 ? 'none' : 'block'
+                }">Продвинутый:  {{aeroflotAdvanced}} ₽</li>
+                <li data-weight="50" [ngStyle]="{
+                    display: weight > 50 ? 'none' : 'block'
+                }">Люкс: {{aeroflotLuxury}} ₽</li>
+            </ul>
+        </div>
+        <div class="rusrail">
+            <p>РЖД</p>
+            <ul>
+                <li data-weight="50" [ngStyle]="{
+                    display: weight > 50 ? 'none' : 'block'
+                }">Эконом: {{rusrailEconomy}} ₽</li>
+                <li data-weight="60" [ngStyle]="{
+                    display: weight > 60 ? 'none' : 'block'
+                }">Продвинутый: {{rusrailAdvanced}} ₽</li>
+                <li data-weight="60" [ngStyle]="{
+                    display: weight > 60 ? 'none' : 'block'
+                }">Люкс: {{rusrailLuxury}} ₽</li>
+            </ul>
+        </div>
+    </div>
+</div>
